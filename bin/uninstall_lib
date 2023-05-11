@@ -1,0 +1,24 @@
+#!/usr/bin/perl
+
+use strict;
+use FindBin;
+use lib "$FindBin::Bin/../lib/perl";
+use VdiStudyHandlerCommon;
+
+sub usage {
+  my $envStr = join(", \$", @ENV_VARS);
+
+  die "
+Uninstall an isasimple or biom dataset.  
+
+Usage: uninstall userdataset_id
+
+Env: \$$envStr
+";
+}
+
+my ($userDatasetId) = @ARGV;
+
+usage() unless scalar(@ARGV) == 1;
+
+deleteStudy($userDatasetId, 0);   
