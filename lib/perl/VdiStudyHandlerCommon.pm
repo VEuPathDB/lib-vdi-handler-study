@@ -20,7 +20,7 @@ sub deleteStudy {
     die "Missing env variable '$envVar'\n" unless $ENV{$envVar};
   }
 
-  my $dbh = DBI->connect("dbi:$ENV{DB_PLATFORM}:database=$ENV{DB_NAME};host=$ENV{DB_HOST};port=$ENV{DB_PORT}", $ENV{DB_USER}, $ENV{DB_PASS})
+  my $dbh = DBI->connect("dbi:$ENV{DB_PLATFORM}://$ENV{DB_HOST}:$ENV{DB_PORT}/$ENV{DB_NAME}", $ENV{DB_USER}, $ENV{DB_PASS})
     || die "Couldn't connect to database: " . DBI->errstr;
   $dbh->{RaiseError} = 1;
 
