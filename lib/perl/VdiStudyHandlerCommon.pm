@@ -9,7 +9,7 @@ our @ISA = 'Exporter';
 our @EXPORT = qw(@ENV_VARS deleteStudy);
 
 # constants
-our @ENV_VARS = ('DB_HOST', 'DB_PORT', 'DB_NAME', 'DB_PLATFORM', 'DB_USER', 'DB_PASS', 'USER_DATASETS_DIR');
+our @ENV_VARS = ('DB_HOST', 'DB_PORT', 'DB_NAME', 'DB_PLATFORM', 'DB_USER', 'DB_PASS', 'DATA_FILES');
 
 
 # delete a study.  If partial flag set, only remove temp tables (as part of post-install clean up), not the full study.
